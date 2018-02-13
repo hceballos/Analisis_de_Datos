@@ -221,72 +221,56 @@
 
 
 
-<div class="section">
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawCurveTypes);
 
-  <div class="content">
-      <script type="text/javascript">
-          google.charts.load('current', {packages: ['corechart', 'line']});
-          google.charts.setOnLoadCallback(drawCurveTypes);
+    function drawCurveTypes(){
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'X');
+      data.addColumn('number', '2016');
+      data.addColumn('number', '2017');
+      data.addRows([
+        ["Ene", 0, ,],
+        ["Feb", 0, ,],
+        ["Mar", -15350002, ,],
+        ["Abr", 7675000, ,],
+        ["May", 265852, ,],
+        ["Jun", 5626250, ,],
+        ["Jul", 3296500, ,],
+        ["Ago", -2079550, ,],
+        ["Sep", -1486516, ,],
+        ["Oct", -10157020, ,],
+        ["Nov", 6472600, ,],
+        ["Dic", 5736886, ,],
+      ]);
 
-          function drawCurveTypes(){
-              var data = new google.visualization.DataTable();
-              data.addColumn('string', 'X');
+      var options = {
+        hAxis: {
+          title: "Meses"
+        },
+        vAxis: {
+          title: "Pesos"
+        },
+        series: {
+          1: {curveType: 'function'}
+        }
+      };
 
-                data.addColumn('number', '2016');
-
-                data.addColumn('number', '2017');
-
-
-              data.addRows([
-                  ["Ene", 0, ,],
-                  ["Feb", 0, ,],
-                  ["Mar", -15350002, ,],
-                  ["Abr", 7675000, ,],
-                  ["May", 265852, ,],
-                  ["Jun", 5626250, ,],
-                  ["Jul", 3296500, ,],
-                  ["Ago", -2079550, ,],
-                  ["Sep", -1486516, ,],
-                  ["Oct", -10157020, ,],
-                  ["Nov", 6472600, ,],
-                  ["Dic", 5736886, ,],
-              ]);
-
-
-              var options = {
-                  hAxis: {
-                      title: "Meses"
-                  },
-                  vAxis: {
-                      title: "Pesos"
-                  },
-                  series: {
-                      1: {curveType: 'function'}
-                  }
-              };
-
-              var chart = new google.visualization.ColumnChart(document.getElementById("Serie de Tiempo"));
-              chart.draw(data, options);
+      var chart = new google.visualization.ColumnChart(document.getElementById("Serie de Tiempo"));
+      chart.draw(data, options);
           }
-      </script>
-
+  </script>
 
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="section">
-          <div class="table-responsive">
-            <div id="Serie de Tiempo"></div>
-          </div>
+        <div class="table-responsive">
+          <div id="Serie de Tiempo"></div>
         </div>
       </div>
     </div>
   </div>
-
-
-  </div>
-</div>
-
 
 
 
